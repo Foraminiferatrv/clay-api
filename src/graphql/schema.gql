@@ -9,15 +9,29 @@ type User {
   password: String!
 }
 
+type UserResponse {
+  id: String!
+  email: String!
+  name: String
+}
+
 type Query {
-  getUserById(id: String!): User
+  getAllUsers: UserResponse!
+  getUserById(id: String!): UserResponse
 }
 
 type Mutation {
   createUser(createUserData: CreateUserInput!): User!
+  signUp(signUpInput: SignUpInput!): User!
 }
 
 input CreateUserInput {
+  name: String
+  email: String!
+  password: String!
+}
+
+input SignUpInput {
   name: String
   email: String!
   password: String!

@@ -18,3 +18,15 @@ export class User {
   // @Field()
   // sculpts: [Sculpt];
 }
+
+@ObjectType()
+export class UserResponse {
+  @Field()
+  id: string;
+
+  @Field()
+  email: string;
+
+  @Field({ nullable: true })
+  name?: string;
+}
