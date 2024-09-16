@@ -30,3 +30,9 @@ export class UserResponse {
   @Field({ nullable: true })
   name?: string;
 }
+
+@ObjectType()
+export class LoginResponse {
+  @Field()
+  access_token: string;
+}

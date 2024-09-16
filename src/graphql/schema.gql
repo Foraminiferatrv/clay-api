@@ -15,9 +15,19 @@ type UserResponse {
   name: String
 }
 
+type LoginResponse {
+  access_token: String!
+}
+
 type Query {
-  getAllUsers: UserResponse!
+  getAllUsers: [UserResponse!]
   getUserById(id: String!): UserResponse
+  logIn(logInInput: LogInInput!): LoginResponse!
+}
+
+input LogInInput {
+  email: String!
+  password: String!
 }
 
 type Mutation {
